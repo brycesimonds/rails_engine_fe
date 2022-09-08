@@ -14,4 +14,16 @@ RSpec.describe MerchantDBService do
     expect(merchant_data[:attributes][:name]).to be_a String
     expect(merchant_data[:id]).to be_a String
   end
+
+  it 'retrieve one merchant' do
+    merchant_id = 1
+    parsed_json = MerchantDBService.single_merchant(merchant_id)
+
+    merchant_data = parsed_json[:data]
+
+    expect(merchant_data[:attributes]).to include(:name)
+    expect(merchant_data).to include(:id)
+    expect(merchant_data[:attributes][:name]).to be_a String
+    expect(merchant_data[:id]).to be_a String
+  end
 end 

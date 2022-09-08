@@ -7,5 +7,4 @@ class Merchant
     @name = data[:attributes][:name]
     @id = data[:id].to_i
   end
-
 end

@@ -6,4 +6,9 @@ class MerchantDBFacade
       Merchant.new(merchant_data)
     end
   end
+
+  def self.single_merchant(merchant_id)
+    merchant = MerchantDBService.get_merchant(merchant_id)[:data]
+    Merchant.new(merchant)
+  end
 end 
